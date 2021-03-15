@@ -711,6 +711,21 @@ class RazerHuntsman(_RippleKeyboard):
 
     DEVICE_IMAGE = "https://assets.razerzone.com/eeimages/support/products/1360/1360_huntsman-3.png"
 
+class RazerHuntsmanV2Analog(_RippleKeyboard):
+    """
+    Class for the Razer Huntsman V2 Analog
+    """
+    EVENT_FILE_REGEX = re.compile(r'.*Razer_Huntsman_V2_Analog(-if01)?-event-kbd')
+
+    USB_VID = 0x1532
+    UID_PID = 0x0266
+    HAS_MATRIX = True
+    MATRIX_DIMS = [8, 23]
+    METHODS = ['get_device_type_keyboard', 'set_static_effect', 'set_spectrum_effect',
+               'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect']
+
+    DEVICE_IMAGE = "https://dl.razerzone.com/src/4023-1-EN-v1.png"
+
 
 class RazerCynosaChroma(_RippleKeyboard):
     """
@@ -1274,18 +1289,3 @@ class RazerBlade15Advanced2020(_RippleKeyboard):
                'set_ripple_effect', 'set_ripple_effect_random_colour']
 
     DEVICE_IMAGE = "https://assets.razerzone.com/eeimages/support/products/1651/razer-blade-15-advanced-2020.png"
-
-class RazerHuntsmanV2Analog(_RippleKeyboard):
-    """
-    Class for the Razer Huntsman V2 Analog
-    """
-    EVENT_FILE_REGEX = re.compile(r'.*Razer_Huntsman_V2_Analog(-if01)?-event-kbd')
-
-    USB_VID = 0x1532
-    UID_PID = 0x0266
-    HAS_MATRIX = True
-    MATRIX_DIMS = [8, 23]
-    METHODS = ['get_device_type_keyboard', 'set_static_effect', 'set_spectrum_effect',
-               'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect']
-
-    DEVICE_IMAGE = "https://dl.razerzone.com/src/4023-1-EN-v1.png"
