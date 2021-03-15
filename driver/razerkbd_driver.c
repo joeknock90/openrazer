@@ -579,6 +579,7 @@ static ssize_t razer_attr_read_device_type(struct device *dev, struct device_att
 
     case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         device_type = "Razer Huntsman V2 Analog\n";
+        break;
 
     default:
         device_type = "Unknown Device\n";
