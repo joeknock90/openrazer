@@ -153,6 +153,7 @@ static int razer_get_report(struct usb_device *usb_dev, struct razer_report *req
     case USB_DEVICE_ID_RAZER_ANANSI:
     case USB_DEVICE_ID_RAZER_HUNTSMAN_TE:
     case USB_DEVICE_ID_RAZER_ORNATA_CHROMA_V2:
+    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report_index = 0x02;
         response_index = 0x02;
         break;
@@ -232,6 +233,7 @@ static void razer_set_device_mode(struct usb_device *usb_dev, unsigned char mode
     case USB_DEVICE_ID_RAZER_CYNOSA_CHROMA:
     case USB_DEVICE_ID_RAZER_CYNOSA_CHROMA_PRO:
     case USB_DEVICE_ID_RAZER_CYNOSA_LITE:
+    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report.transaction_id.id = 0x3F;
         break;
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_ELITE:
@@ -613,6 +615,7 @@ static ssize_t razer_attr_write_mode_macro_effect(struct device *dev, struct dev
     case USB_DEVICE_ID_RAZER_CYNOSA_CHROMA:
     case USB_DEVICE_ID_RAZER_CYNOSA_CHROMA_PRO:
     case USB_DEVICE_ID_RAZER_CYNOSA_LITE:
+    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report = razer_chroma_standard_set_led_effect(NOSTORE, MACRO_LED, enabled);
         report.transaction_id.id = 0x3F;
         break;
@@ -919,6 +922,7 @@ static ssize_t razer_attr_write_mode_none(struct device *dev, struct device_attr
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_ELITE:
     case USB_DEVICE_ID_RAZER_CYNOSA_V2:
     case USB_DEVICE_ID_RAZER_ORNATA_CHROMA_V2:
+    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report = razer_chroma_extended_matrix_effect_none(VARSTORE, BACKLIGHT_LED);
         report.transaction_id.id = 0x1F;
         break;
@@ -979,6 +983,7 @@ static ssize_t razer_attr_write_mode_wave(struct device *dev, struct device_attr
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_ELITE:
     case USB_DEVICE_ID_RAZER_CYNOSA_V2:
     case USB_DEVICE_ID_RAZER_ORNATA_CHROMA_V2:
+    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report = razer_chroma_extended_matrix_effect_wave(VARSTORE, BACKLIGHT_LED, direction);
         report.transaction_id.id = 0x1F;
         break;
@@ -1019,6 +1024,7 @@ static ssize_t razer_attr_write_mode_spectrum(struct device *dev, struct device_
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_ELITE:
     case USB_DEVICE_ID_RAZER_CYNOSA_V2:
     case USB_DEVICE_ID_RAZER_ORNATA_CHROMA_V2:
+    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report = razer_chroma_extended_matrix_effect_spectrum(VARSTORE, BACKLIGHT_LED);
         report.transaction_id.id = 0x1F;
         break;
