@@ -153,7 +153,6 @@ static int razer_get_report(struct usb_device *usb_dev, struct razer_report *req
     case USB_DEVICE_ID_RAZER_ANANSI:
     case USB_DEVICE_ID_RAZER_HUNTSMAN_TE:
     case USB_DEVICE_ID_RAZER_ORNATA_CHROMA_V2:
-    case USB_DEVICE_ID_RAZER_HUNTSMAN_V2_ANALOG:
         report_index = 0x02;
         response_index = 0x02;
         break;
