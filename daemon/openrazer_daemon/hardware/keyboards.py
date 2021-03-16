@@ -718,7 +718,7 @@ class RazerHuntsmanV2Analog(_RippleKeyboard):
     EVENT_FILE_REGEX = re.compile(r'.*Razer_Huntsman_V2_Analog(-if01)?-event-kbd')
 
     USB_VID = 0x1532
-    UID_PID = 0x0266
+    USB_PID = 0x0266
     HAS_MATRIX = True
     MATRIX_DIMS = [8, 23]
     METHODS = ['get_device_type_keyboard', 'set_wave_effect', 'set_static_effect', 'set_spectrum_effect',
